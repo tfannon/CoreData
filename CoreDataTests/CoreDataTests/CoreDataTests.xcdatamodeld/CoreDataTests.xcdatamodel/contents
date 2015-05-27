@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bodypart" representedClassName="Bodypart" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="bodyparts" inverseEntity="Exercise" syncable="YES"/>
+    </entity>
+    <entity name="Boss" representedClassName="Boss" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="employees" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Employee" inverseName="boss" inverseEntity="Employee" syncable="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName="Employee" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="boss" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Boss" inverseName="employees" inverseEntity="Boss" syncable="YES"/>
+    </entity>
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bodyparts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bodypart" inverseName="exercises" inverseEntity="Bodypart" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Boss" positionX="-20" positionY="-18" width="128" height="73"/>
+        <element name="Employee" positionX="252" positionY="-19" width="128" height="73"/>
+        <element name="Exercise" positionX="-18" positionY="216" width="128" height="73"/>
+        <element name="Bodypart" positionX="261" positionY="215" width="128" height="73"/>
+    </elements>
+</model>
